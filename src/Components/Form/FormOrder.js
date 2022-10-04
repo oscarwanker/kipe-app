@@ -1,5 +1,6 @@
 import styles from "./FormOrder.modules.css";
 import { useState, useEffect } from "react";
+import Card from '../Card/Card'
 
 const OrderForm = (props) => {
 
@@ -24,14 +25,19 @@ const OrderForm = (props) => {
 
   const orderHnd = () => {
 
+      if (snack.length <= 0 || qty.length <= 0) {
+      return;
+    } 
+    
     const rd2 = {
       snack: snack,
       quantity: qty,
     };
+    
     setOrder((prev) => {
       return [rd2, ...prev];
-      
     });
+    
   };
 
   useEffect(() => {
@@ -44,7 +50,7 @@ const OrderForm = (props) => {
     if (name.length <= 0 || snack.length <= 0 || qty.length <= 0) {
       return;
     }
-    const id = Math.random() * 1000;
+    const id = Math.floor(Math.random()* 1000);
     
     const ordr = [{
         id: id,
@@ -53,21 +59,24 @@ const OrderForm = (props) => {
       }];
 
     props.formSavedData(ordr);
+    setSnack('')
+    setQty('')
     //    console.log(order)
   };
 
   return (
-    <>
-      <form className={styles.form} onSubmit={SubmitHandler}>
-        <input placeholder="Name" onChange={nameHnd} />
-        <select name={null} onChange={snackHnd}>
-          <option></option>
+    <Card className={styles.container} >
+      <form className={styles} onSubmit={SubmitHandler}>
+        <input placeholder="Name" value={name} onChange={nameHnd} />
+        
+        <select selected value={snack} onChange={snackHnd}>
+          <option hidden>Seleciona un snack</option>
           <option value="Kipe">Kipe</option>
-          <option value="Bollito De Yuca queso">Bollito De yuca queso</option>
-          <option value="Bollito De Yuca carne">Bollito De yuca carne</option>
-          <option value="Bollito De Platano maduro con queso">Bollito De yuca carne</option>
+          <option value="Bollito De Yuca Queso">Bollito De Yuca Queso</option>
+          <option value="Bollito De Yuca Carne">Bollito De Yuca Carne</option>
+          <option value="Bollito De Platano maduro con Queso">Bollito De Platano Maduro con Queso</option>
         </select>
-        <input type="number" min="1" max="50" onChange={qtyHnd} />
+        <input value={qty} placeholder="Cantidad" type="number" min="1" max="50" onChange={qtyHnd} />
         <button onClick={orderHnd}>
             Listar
         </button>
@@ -75,7 +84,7 @@ const OrderForm = (props) => {
           Ordenar
         </button>
       </form>
-    </>
+    </Card>
   );
 };
 

@@ -5,7 +5,10 @@ import { useState } from 'react';
 
 function App() {
 
-  const savedData = (data) =>{setList(data); console.log(data)}
+  const savedData = (data) =>{
+    setList(data);
+    console.log(data)
+  }
 
   const [list, setList] = useState([])
 
