@@ -1,22 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import OrderForm from './Components/Form/FormOrder';
+import OrderList from './Components/OrderList/OrderList';
+import { useState } from 'react';
 
 function App() {
+
+  const savedData = (data) =>{setList(data); console.log(data)}
+
+  const [list, setList] = useState([])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <OrderForm formSavedData={savedData}/>
+       <OrderList dataList={list}/>
       </header>
     </div>
   );
