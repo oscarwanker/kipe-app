@@ -15,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Make your order</h1>
        <OrderForm formSavedData={savedData}/>
        <OrderList dataList={list}/>
       </header>
