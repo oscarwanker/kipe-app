@@ -1,5 +1,5 @@
 
-import styles from './Order.modules.css'
+import './Order.css'
 
 
 const OrderItem = (props) =>{
@@ -7,13 +7,21 @@ const OrderItem = (props) =>{
 
     return(
       
-    <li className={styles}>
+    <li> 
+        <h1>Orden</h1>           
+       
+      <section className='sect' >
+        <h2>{props.name}</h2>
+             
+          {props.order.map((dat)=>(    
+              <div className='lol'>
+                <p className='qty'>{dat.quantity}</p>
+                <p className='snack'> {dat.snack}</p>
+              </div>
+                ))}
+               
+          </section>
       
-        <h1>{props.name}</h1>        
-        <section>
-        <h2>Orden# {props.id}</h2>
-        {props.order.map((dat)=>(<p>{`Snack: ${dat.quantity}x ${dat.snack}`}</p>))}
-        </section>
     </li>
        
     );

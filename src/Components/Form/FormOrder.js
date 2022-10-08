@@ -69,20 +69,22 @@ const OrderForm = (props) => {
       <form className={styles} onSubmit={SubmitHandler}>
         <input placeholder="Name" value={name} onChange={nameHnd} />
         
-        <select selected value={snack} onChange={snackHnd}>
-          <option hidden>Seleciona un snack</option>
-          <option value="Kipe">Kipe</option>
-          <option value="Bollito De Yuca Queso">Bollito De Yuca Queso</option>
-          <option value="Bollito De Yuca Carne">Bollito De Yuca Carne</option>
-          <option value="Bollito De Platano maduro con Queso">Bollito De Platano Maduro con Queso</option>
-        </select>
+      <select selected value={snack} onChange={snackHnd}>
+        
+            <option hidden>Seleciona un snack</option>
+            <option value="Kipe">Kipe</option>
+            <option value="Croqueta de Pollo">Croqueta de pollo</option>
+            <option value="Bollito De Yuca Queso">Bollito De Yuca Queso</option>
+            <option value="Bollito De Yuca Carne">Bollito De Yuca Carne</option>
+            <option value="Bollito De Platano maduro con Queso">Bollito De Platano Maduro con Queso</option>
+     \
+      </select>
+        
         <input value={qty} placeholder="Cantidad" type="number" min="1" max="50" onChange={qtyHnd} />
-        <button onClick={orderHnd}>
-            Listar
-        </button>
-        <button type="submit" onClick={SubmitHandler}>
-          Ordenar
-        </button>
+        
+        <button onClick={orderHnd}>Listar</button>
+        <button type="submit" onClick={SubmitHandler}>Ordenar</button>
+        
       </form>
     </Card>
   );

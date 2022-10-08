@@ -1,0 +1,37 @@
+h1{
+    list-style-type: none; 
+}
+
+li{
+  color: white;
+
+}
+.sect{
+  background-color: gray;
+  border-radius: 15px;
+  padding: 1px;
+}
+
+.lol{
+  display: flex;
+  flex-flow: row wrap;
+  background-color: dimgrey;
+  margin: 10px;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.qty{
+  margin: 15px;
+  background-color: #0000007d;
+  width: 24px;
+  border-radius: 8px;
+  padding: 20px;
+  height: auto;
+}
+
+.snack{  
+  margin: 35px;
+  
+}
