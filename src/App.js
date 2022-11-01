@@ -4,23 +4,22 @@ import OrderList from './Components/OrderList/OrderList';
 import AllOrder from './Components/AllOrders/AllOrder';
 import { useState } from 'react';
 
-//const MOCK_data = [];
+const MOCK_data = [{
+  "snack": "Croqueta de Pollo",
+  "quantity": "2"
+},{
+  "snack": "Croqueta de Pollo",
+  "quantity": "2"
+}];
 
 function App() {
 
-  const [list, setList] = useState([{
-    "snack": "Croqueta de Pollo",
-    "quantity": "2"
-},{
-    "snack": "Croqueta de Pollo",
-    "quantity": "2"
-}]);
+  const [list, setList] = useState(MOCK_data);
 
     const savedData = (data) =>{
       setList(data);
     console.log(list)
   }
-
 
   return (
     <div className="App">
