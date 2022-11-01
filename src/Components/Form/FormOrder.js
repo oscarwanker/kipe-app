@@ -7,7 +7,6 @@ const OrderForm = (props) => {
   const [name, setName] = useState("");
   const [snack, setSnack] = useState("");
   const [qty, setQty] = useState();
-
   const [order, setOrder] = useState([]);
 
   const nameHnd = (event) => {
@@ -50,21 +49,15 @@ const OrderForm = (props) => {
     if (name.length <= 0 || snack.length <= 0 || qty.length <= 0) {
       return;
     }
-    const id = Math.floor(Math.random()* 1000);
-    
-    const ordr = [{
-        id: id,
-        name: name,
-        order
-      }];
-
-    props.formSavedData(ordr);
+    //const id = Math.floor(Math.random()* 1000);
+    props.formSavedData(order)
     setSnack('')
     setQty('')
-    //    console.log(order)
+     
   };
 
   return (
+    
     <Card className={styles.container} >
       <form className={styles} onSubmit={SubmitHandler}>
         <input placeholder="Name" value={name} onChange={nameHnd} />
@@ -76,14 +69,16 @@ const OrderForm = (props) => {
             <option value="Croqueta de Pollo">Croqueta de pollo</option>
             <option value="Bollito De Yuca Queso">Bollito De Yuca Queso</option>
             <option value="Bollito De Yuca Carne">Bollito De Yuca Carne</option>
+            <option value="Bollito De papa con queso">Bollito De papa con queso</option>
+            <option value="Pastelito de Pollo">Pastelito de Pollo</option>
             <option value="Bollito De Platano maduro con Queso">Bollito De Platano Maduro con Queso</option>
-     \
       </select>
         
         <input value={qty} placeholder="Cantidad" type="number" min="1" max="50" onChange={qtyHnd} />
         
-        <button onClick={orderHnd}>Listar</button>
-        <button type="submit" onClick={SubmitHandler}>Ordenar</button>
+        <button type="submit" onClick={orderHnd}>Listar</button>
+        <button onClick={SubmitHandler}>submit</button>
+        
         
       </form>
     </Card>

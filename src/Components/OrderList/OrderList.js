@@ -1,23 +1,22 @@
 import OrderItem from "../OrderItem/OrderItem";
 import styles from './OrderList.modules.css'
-import Card from '../Card/Card'
+
+
 const OrderList = (props) =>{
 
       return(
-        <Card>
-        <ul className={styles}>
-            {props.dataList.map((data)=>(
-              <OrderItem
-              key={data.id}
-              id={data.id}
-              name={data.name}
-              snack={data.snack}
-              order={data.order}                  
-              />
-            ))}
         
+        <ul className={styles}>
+          <h1>Your Order</h1>
+          {props.dataList.map((dat)=>{
+          return(             
+            <OrderItem
+              sn={dat.snack}
+              qty={dat.quantity}
+              />)
+          })}
         </ul>
-        </Card>
+      
       );
 }
 

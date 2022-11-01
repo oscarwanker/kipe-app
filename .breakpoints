@@ -1,0 +1,20 @@
+{
+  "files": {
+    "src/Components/OrderItem/OrderItem.js": [
+      {
+        "id": "ae038736-0252-4fa6-9775-223677d65a22",
+        "line": 9,
+        "version": 2514,
+        "index": 83
+      }
+    ],
+    "src/Components/OrderList/OrderList.js": [
+      {
+        "id": "01bb3e0c-1e07-4091-9d40-ba688766490a",
+        "line": 23,
+        "version": 441,
+        "index": 431
+      }
+    ]
+  }
+}

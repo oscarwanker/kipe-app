@@ -33,5 +33,7 @@ li{
 
 .snack{  
   margin: 35px;
+  display: flex;
+  flex-flow: row wrap;
   
 }
