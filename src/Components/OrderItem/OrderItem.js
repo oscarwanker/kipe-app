@@ -1,8 +1,11 @@
 import './Order.css'
 
-
 const OrderItem = (props) =>{
 
+  const idPasser = () => {
+    props.onPassedId(props.id)
+  }
+  
   return(
       
    <div>
@@ -10,11 +13,11 @@ const OrderItem = (props) =>{
       <div className='lol'>
           <p className='qty'>{props.qty} </p>
           <p className='snack'> {props.sn}</p>
+        <button onClick={idPasser}>X</button>
       </div>
     </li>
-   </div>
-       
-    );
+   </div>       
+  );
 };
 
 export default OrderItem;

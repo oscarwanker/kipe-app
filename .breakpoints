@@ -3,17 +3,17 @@
     "src/Components/OrderItem/OrderItem.js": [
       {
         "id": "ae038736-0252-4fa6-9775-223677d65a22",
-        "line": 9,
-        "version": 2514,
-        "index": 83
+        "line": 12,
+        "version": 2635,
+        "index": 147
       }
     ],
     "src/Components/OrderList/OrderList.js": [
       {
         "id": "01bb3e0c-1e07-4091-9d40-ba688766490a",
-        "line": 23,
-        "version": 441,
-        "index": 431
+        "line": 36,
+        "version": 950,
+        "index": 728
       }
     ]
   }

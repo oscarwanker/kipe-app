@@ -4,15 +4,11 @@ import Card from '../Card/Card'
 
 const OrderForm = (props) => {
 
-  const [name, setName] = useState("");
+  
   const [snack, setSnack] = useState("");
   const [qty, setQty] = useState();
   const [order, setOrder] = useState([]);
 
-  const nameHnd = (event) => {
-    setName(event.target.value);
-    console.log(name);
-  };
   const snackHnd = (event) => {
     setSnack(event.target.value);
     console.log(snack);
@@ -46,24 +42,28 @@ const OrderForm = (props) => {
   const SubmitHandler = (event) => {
     event.preventDefault();
 
-    if (name.length <= 0 || snack.length <= 0 || qty.length <= 0) {
+    if (snack.length <= 0 || qty.length <= 0) {
       return;
     }
-    //const id = Math.floor(Math.random()* 1000);
+
     props.formSavedData(order)
     setSnack('')
     setQty('')
      
   };
 
+  const orderReset = () =>{
+   props.onDelete()
+    setOrder([]);  
+    console.log(order)
+ };
+
+
   return (
     
     <Card className={styles.container} >
-      <form className={styles} onSubmit={SubmitHandler}>
-        <input placeholder="Name" value={name} onChange={nameHnd} />
-        
+      <form className={styles} onSubmit={SubmitHandler}>   
       <select selected value={snack} onChange={snackHnd}>
-        
             <option hidden>Seleciona un snack</option>
             <option value="Kipe">Kipe</option>
             <option value="Croqueta de Pollo">Croqueta de pollo</option>
@@ -77,7 +77,7 @@ const OrderForm = (props) => {
         <input value={qty} placeholder="Cantidad" type="number" min="1" max="50" onChange={qtyHnd} />
         
         <button type="submit" onClick={orderHnd}>Listar</button>
-        <button onClick={SubmitHandler}>submit</button>
+        <button onClick={orderReset}>Reset List</button>
         
         
       </form>

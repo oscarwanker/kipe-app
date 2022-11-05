@@ -14,7 +14,7 @@ li{
 
 .lol{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   background-color: dimgrey;
   margin: 10px;
   border-radius: 15px;
@@ -25,15 +25,16 @@ li{
 .qty{
   margin: 15px;
   background-color: #0000007d;
-  width: 24px;
+  width: 5px;
   border-radius: 8px;
-  padding: 20px;
-  height: auto;
+  padding: 15px;
+  height: 0%;
 }
 
 .snack{  
-  margin: 35px;
+  margin: 5px;
   display: flex;
   flex-flow: row wrap;
+  padding: 25px;
   
 }

@@ -2,17 +2,28 @@ import './AllOrder.css';
 import { useState , useEffect} from "react";
 
 const AllOrders = (props) =>{
-  
-  const [allOrders, setAllOrders] = useState()
+  const [name, setName] = useState("");
+  const [allOrders, setAllOrders] = useState([])
+
+    const nameHnd = (event) => {
+    setName(event.target.value);
+    console.log(name);
+  };
 
   const allHandler = () =>{
-    const e = props.forAllOrders;
+    const order = props.forAllOrders;
+    const id = Math.floor(Math.random()* 1000);
+  
     const anOrder = {
-      id: 1234,
-      name: 'lol',
-       e
+      Client:{
+        name,
+        id   
+      },
+       order
     }
-    setAllOrders(anOrder);
+    setAllOrders((prev)=>{
+      return [anOrder, ...prev]
+    });
   }
   
   useEffect(()=>{
@@ -21,7 +32,7 @@ const AllOrders = (props) =>{
 
 return (  
   <>
-  
+      <input placeholder='Your name' value={name} onChange={nameHnd}></input>
       <button onClick={allHandler}>make Order</button>
   
   </>);
